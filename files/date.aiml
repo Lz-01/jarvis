@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	    <!-- Check for the current date -->
+    <!-- shows the full date-->
+    <category>
+    <pattern>DATE</pattern>
+<template>
+    Today is <set var="date"><date/></set>. Type 'Season', 'today' or 
+    try another category like 'News', 'car' or 'Weather'.
+</template>
+</category>
+
+    <!-- Check for the current name of the day -->
+    <!-- with format="A" name of the current day-->
+    <category>
+    <pattern>TODAY</pattern>
+<template>
+    Today is <set var="today"><date format="%A"/></set>
+</template>
+</category>
+
+<!-- Check for the current season -->
+<!-- <condition> gets the current month -->
+    <category><pattern>SEASON</pattern>
+<template>It is currently <think><set var="season"><date format="%B"/></set>
+</think>
+<condition var="season">
+<li><value>January</value>Winter</li>
+<li><value>February</value>Winter</li>
+<li><value>March</value>Winter</li>
+<li><value>April</value>Spring</li>
+<li><value>May</value>Spring</li>
+<li><value>June</value>Summer</li>
+<li><value>July</value>Summer</li>
+<li><value>August</value>Summer</li>
+<li><value>September</value>Fall</li>
+<li><value>October</value>Fall</li>
+<li><value>November</value>Winter</li>
+<li><value>December</value>Winter</li>
+<li>unknown</li>
+</condition> Season.</template>
+</category>
+</aiml>
